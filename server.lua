@@ -158,12 +158,6 @@ QBCore.Functions.CreateCallback('qb-multicharacter:server:GetUserCharacters', fu
     end)
 end)
 
-QBCore.Functions.CreateCallback('qb-multicharacter:server:GetServerLogs', function(_, cb)
-    MySQL.query('SELECT * FROM server_logs', {}, function(result)
-        cb(result)
-    end)
-end)
-
 QBCore.Functions.CreateCallback('qb-multicharacter:server:GetNumberOfCharacters', function(source, cb)
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
