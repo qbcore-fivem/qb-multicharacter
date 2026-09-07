@@ -1,13 +1,11 @@
 name: Lint
-on: [push, pull_request_target]
+on: [push, pull_request]
 jobs:
   lint:
     name: Lint Resource
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/checkout@v4
       - name: Lint
         uses: iLLeniumStudios/fivem-lua-lint-action@v2
         with:
